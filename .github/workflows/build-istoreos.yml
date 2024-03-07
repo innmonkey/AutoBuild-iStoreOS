@@ -87,7 +87,7 @@ jobs:
 
     - name: 加载自定义 feeds
       run: |
-        [ -e $FEEDS_CONF_PATH ] && mv $FEEDS_CONF_PATH openwrt/$FEEDS_CONF
+        [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf
         chmod +x $DIY_P1_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
