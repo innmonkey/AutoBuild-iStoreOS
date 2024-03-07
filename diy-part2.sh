@@ -45,35 +45,21 @@ CONFIG_PACKAGE_luci-i18n-poweroff-zh-cn=y
 
 # openclash
 CONFIG_PACKAGE_luci-app-openclash=y
-CONFIG_PACKAGE_luci-i18n-openclash-zh-cn=y
 
 # adguardhome
-#CONFIG_PACKAGE_adguardhome=y
 CONFIG_PACKAGE_luci-app-adguardhome=y
-CONFIG_PACKAGE_luci-i18n-adguardhome-zh-cn=y
 
 # mosdns
-#CONFIG_PACKAGE_mosdns=y
 CONFIG_PACKAGE_luci-app-mosdns=y
-CONFIG_PACKAGE_luci-i18n-mosdns-zh-cn=y
 
 #pushbot
 CONFIG_PACKAGE_luci-app-pushbot=y
 
 #qbittorrent
 CONFIG_PACKAGE_luci-app-qbittorrent=y
-CONFIG_PACKAGE_luci-i18n-qbittorrent-zh-cn=y
-#CONFIG_PACKAGE_qbittorrent=y
 
 #transmission
 CONFIG_PACKAGE_luci-app-transmission=y
-CONFIG_PACKAGE_luci-i18n-transmission-zh-cn=y
-CONFIG_PACKAGE_transmission-daemon-openssl=y
-CONFIG_PACKAGE_transmission-web-control=y
-
-# rclone
-#CONFIG_PACKAGE_rclone=y
-#CONFIG_PACKAGE_fuse3-utils=y
 
 " >> .config
 
