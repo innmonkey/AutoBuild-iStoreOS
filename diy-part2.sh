@@ -48,12 +48,12 @@ CONFIG_PACKAGE_luci-app-openclash=y
 CONFIG_PACKAGE_luci-i18n-openclash-zh-cn=y
 
 # adguardhome
-CONFIG_PACKAGE_adguardhome=y
+#CONFIG_PACKAGE_adguardhome=y
 CONFIG_PACKAGE_luci-app-adguardhome=y
 CONFIG_PACKAGE_luci-i18n-adguardhome-zh-cn=y
 
 # mosdns
-CONFIG_PACKAGE_mosdns=y
+#CONFIG_PACKAGE_mosdns=y
 CONFIG_PACKAGE_luci-app-mosdns=y
 CONFIG_PACKAGE_luci-i18n-mosdns-zh-cn=y
 
@@ -63,7 +63,7 @@ CONFIG_PACKAGE_luci-app-pushbot=y
 #qbittorrent
 CONFIG_PACKAGE_luci-app-qbittorrent=y
 CONFIG_PACKAGE_luci-i18n-qbittorrent-zh-cn=y
-CONFIG_PACKAGE_qbittorrent=y
+#CONFIG_PACKAGE_qbittorrent=y
 
 #transmission
 CONFIG_PACKAGE_luci-app-transmission=y
