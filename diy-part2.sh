@@ -22,7 +22,7 @@ sed -i 's/192.168.1.1/192.168.110.253/g' package/base-files/files/bin/config_gen
 # sed -i "s?/bin/login?/usr/libexec/login.sh?g" ${GITHUB_WORKSPACE}/openwrt/package/feeds/packages/ttyd/files/ttyd.config
 
 # 移除要替换的包
-#rm -rf feeds/luci/themes/luci-theme-argon
+rm -rf feeds/luci/themes/luci-theme-argon
 rm -rf feeds/packages/net/mosdns
 #cp -r -f ./feeds/第三方源的文件 ./feeds/packages/net/mosdns
 
@@ -40,7 +40,7 @@ function git_sparse_clone() {
 git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
 git clone https://github.com/zzsj0928/luci-app-pushbot package/luci-app-pushbot
 git clone --depth=1 https://github.com/sbwml/luci-app-mosdns package/luci-app-mosdns
-#git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
+git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
 #git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
 
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-qbittorrent
