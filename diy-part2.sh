@@ -41,7 +41,7 @@ git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome package/lu
 git clone https://github.com/zzsj0928/luci-app-pushbot package/luci-app-pushbot
 git clone --depth=1 https://github.com/sbwml/luci-app-mosdns package/luci-app-mosdns
 git clone --depth=1 -b 18.06 https://github.com/jerrykuku/luci-theme-argon package/luci-theme-argon
-#git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
+git clone --depth=1 https://github.com/jerrykuku/luci-app-argon-config package/luci-app-argon-config
 
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-qbittorrent
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-transmission
