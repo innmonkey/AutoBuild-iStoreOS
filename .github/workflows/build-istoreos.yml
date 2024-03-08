@@ -82,7 +82,7 @@ jobs:
       uses: klever1988/cachewrtbuild@main
       with:
         ccache: 'true'
-        mixkey: ${{ matrix.os }}-${{ matrix.ARCHITECTURE }}-${{ matrix.REPO_BRANCH }}
+        mixkey: x86-64-${{ env.REPO_BRANCH }}
         prefix: ${{ github.workspace }}/openwrt
 
     - name: 加载自定义 feeds
@@ -164,14 +164,14 @@ jobs:
       id: tag
       if: steps.compile.outputs.status == 'success' && env.UPLOAD_RELEASE == 'true' && !cancelled()
       run: |
-        echo "::set-output name=release_tag::$(date +"%Y.%m.%d-%H.%M")"
+        echo "name=release_tag::$(date +"%Y.%m.%d-%H.%M")" >> ${GITHUB_OUTPUT}
         touch release.txt
         echo "
-        💻 架构: ${{ matrix.ARCHITECTURE }}
+        💻 架构: x86-64
 
         📂 源码: ${{ env.REPO_URL }}
 
-        🌳 分支: ${{ matrix.REPO_BRANCH }}
+        🌳 分支: ${{ env.REPO_BRANCH }}
 
         ⏱️ 编译时间: $(date +"%Y年%m月%d日%H时%M分")
 
