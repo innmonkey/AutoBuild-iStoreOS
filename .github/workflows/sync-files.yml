@@ -15,8 +15,8 @@ jobs:
 
     - name: 下载架构编译配置文件
       run: |
-        wget -O ./x86-alpha/feeds.conf https://fw0.koolcenter.com/iStoreOS/alpha/x86_64_efi/feeds.conf
-        wget -O ./x86-alpha/.config https://fw0.koolcenter.com/iStoreOS/alpha/x86_64_efi/config.buildinfo
+        wget -O ./feeds.conf https://fw0.koolcenter.com/iStoreOS/alpha/x86_64_efi/feeds.conf
+        wget -O ./.config https://fw0.koolcenter.com/iStoreOS/alpha/x86_64_efi/config.buildinfo
 
     - name: 同步配置
       uses: peaceiris/actions-gh-pages@v3
