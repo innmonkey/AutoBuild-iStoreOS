@@ -33,16 +33,15 @@ function git_sparse_clone() {
 }
 
 # 添加额外插件
-git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
-git clone --depth=1 https://github.com/sbwml/luci-app-mosdns package/luci-app-mosdns
-git_sparse_clone master https://github.com/vernesong/OpenClash luci-app-openclash
-
+#git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
+git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-adguardhome
+git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-openclash
+git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-jellyfin
+git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-xunlei
+git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-mosdns
 #git clone https://github.com/zzsj0928/luci-app-pushbot package/luci-app-pushbot
 #git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-qbittorrent
 #git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-transmission
-
-
-
 
 echo "
 # 额外组件
@@ -64,12 +63,19 @@ CONFIG_PACKAGE_luci-app-pushbot=y
 #Jellyfin
 CONFIG_PACKAGE_luci-app-jellyfin=y
 
+#xunlei
+CONFIG_PACKAGE_luci-app-xunlei=y
+
 #qbittorrent
 CONFIG_PACKAGE_luci-app-qbittorrent=y
 
 #transmission
 CONFIG_PACKAGE_luci-app-transmission=y
 " >> .config
+
+# 移除S.M.A.R.T.
+sed -i 's/CONFIG_PACKAGE_smartd=y/CONFIG_PACKAGE_smartd=n/' .config
+sed -i 's/CONFIG_PACKAGE_smartmontools=y/CONFIG_PACKAGE_smartmontools=n/' .config
 
 # 移除应用过滤
 sed -i 's/CONFIG_PACKAGE_appfilter=y/CONFIG_PACKAGE_appfilter=n/' .config
@@ -82,6 +88,7 @@ sed -i 's/CONFIG_PACKAGE_luci-i18n-wol-zh-cn=y/CONFIG_PACKAGE_luci-i18n-wol-zh-c
 sed -i 's/CONFIG_PACKAGE_luci-app-hd-idle=y/CONFIG_PACKAGE_luci-app-hd-idle=n/' .config
 sed -i 's/CONFIG_PACKAGE_hd-idle=y/CONFIG_PACKAGE_hd-idle=n/' .config
 sed -i 's/CONFIG_PACKAGE_luci-i18n-hd-idle-zh-cn=y/CONFIG_PACKAGE_luci-i18n-hd-idle-zh-cn=n/' .config
+
 
 #移除samba4
 sed -i 's/CONFIG_PACKAGE_luci-i18n-samba4-zh-cn=y/CONFIG_PACKAGE_luci-i18n-samba4-zh-cn=n/' .config
@@ -132,3 +139,16 @@ sed -i 's/CONFIG_PACKAGE_kmod-md-linear=y/CONFIG_PACKAGE_kmod-md-linear=n/' .con
 
 # 移除 bootstrap 主题
 sed -i 's/CONFIG_PACKAGE_luci-theme-bootstrap=y/CONFIG_PACKAGE_luci-theme-bootstrap=n/' .config
+
+# 调整 transmission 到 nas 菜单
+sed -i 's/services/nas/g' feeds/luci/applications/luci-app-transmission/root/usr/share/luci/menu.d/luci-app-transmission.json
+
+# 调整 jellyfin 到 nas 菜单
+#sed -i 's/services/nas/g' package/luci-app-jellyfin/luasrc/controller/*.lua
+#sed -i 's/services/nas/g' package/luci-app-jellyfin/luasrc/model/cbi/v2ray_server/*.lua
+#sed -i 's/services/nas/g' package/luci-app-jellyfin/luasrc/view/v2ray_server/*.htm
+
+# 调整 迅雷 到 nas 菜单
+#sed -i 's/services/nas/g' package/luci-app-xunlei/luasrc/controller/*.lua
+#sed -i 's/services/nas/g' package/luci-app-xunlei/luasrc/model/cbi/v2ray_server/*.lua
+#sed -i 's/services/nas/g' package/luci-app-xunlei/luasrc/view/v2ray_server/*.htm
