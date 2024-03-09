@@ -13,14 +13,8 @@
 # 修改openwrt登陆地址,把下面的 10.0.0.1 修改成你想要的就可以了
 sed -i 's/192.168.1.1/192.168.110.253/g' package/base-files/files/bin/config_generate
 
-# 修改 子网掩码
-#sed -i 's/255.255.255.0/255.255.0.0/g' package/base-files/files/bin/config_generate
-
 # 修改主机名字，把 iStore OS 修改你喜欢的就行（不能纯数字或者使用中文）
 sed -i 's/OpenWrt/iStoreOS/g' package/base-files/files/bin/config_generate
-
-# ttyd 自动登录
-# sed -i "s?/bin/login?/usr/libexec/login.sh?g" ${GITHUB_WORKSPACE}/openwrt/package/feeds/packages/ttyd/files/ttyd.config
 
 # 移除要替换的包
 rm -rf feeds/packages/net/mosdns
@@ -40,12 +34,13 @@ function git_sparse_clone() {
 
 # 添加额外插件
 git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
-#git clone https://github.com/zzsj0928/luci-app-pushbot package/luci-app-pushbot
 git clone --depth=1 https://github.com/sbwml/luci-app-mosdns package/luci-app-mosdns
+git_sparse_clone master https://github.com/vernesong/OpenClash luci-app-openclash
 
+#git clone https://github.com/zzsj0928/luci-app-pushbot package/luci-app-pushbot
 #git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-qbittorrent
 #git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-transmission
-git_sparse_clone master https://github.com/vernesong/OpenClash luci-app-openclash
+
 
 
 
@@ -76,19 +71,6 @@ CONFIG_PACKAGE_luci-app-qbittorrent=y
 CONFIG_PACKAGE_luci-app-transmission=y
 " >> .config
 
-# 移除 ddns 和 ddnsto
-#sed -i 's/CONFIG_PACKAGE_ddns-scripts=y/CONFIG_PACKAGE_ddns-scripts=n/' .config
-#sed -i 's/CONFIG_PACKAGE_ddns-scripts-cloudflare=y/CONFIG_PACKAGE_ddns-scripts-cloudflare=n/' .config
-#sed -i 's/CONFIG_PACKAGE_ddns-scripts-dnspod=y/CONFIG_PACKAGE_ddns-scripts-dnspod=n/' .config
-#sed -i 's/CONFIG_PACKAGE_ddns-scripts-services=y/CONFIG_PACKAGE_ddns-scripts-services=n/' .config
-#sed -i 's/CONFIG_PACKAGE_ddns-scripts_aliyun=y/CONFIG_PACKAGE_ddns-scripts_aliyun=n/' .config
-#sed -i 's/CONFIG_PACKAGE_luci-app-ddns=y/CONFIG_PACKAGE_luci-app-ddns=n/' .config
-#sed -i 's/CONFIG_PACKAGE_luci-i18n-ddns-zh-cn=y/CONFIG_PACKAGE_luci-i18n-ddns-zh-cn=n/' .config
-
-#sed -i 's/CONFIG_PACKAGE_ddnsto=y/CONFIG_PACKAGE_ddnsto=n/' .config
-#sed -i 's/CONFIG_PACKAGE_luci-app-ddnsto=y/CONFIG_PACKAGE_luci-app-ddnsto=n/' .config
-#sed -i 's/CONFIG_PACKAGE_luci-i18n-ddnsto-zh-cn=y/CONFIG_PACKAGE_luci-i18n-ddnsto-zh-cn=n/' .config
-
 # 移除应用过滤
 sed -i 's/CONFIG_PACKAGE_appfilter=y/CONFIG_PACKAGE_appfilter=n/' .config
 
@@ -100,7 +82,6 @@ sed -i 's/CONFIG_PACKAGE_luci-i18n-wol-zh-cn=y/CONFIG_PACKAGE_luci-i18n-wol-zh-c
 sed -i 's/CONFIG_PACKAGE_luci-app-hd-idle=y/CONFIG_PACKAGE_luci-app-hd-idle=n/' .config
 sed -i 's/CONFIG_PACKAGE_hd-idle=y/CONFIG_PACKAGE_hd-idle=n/' .config
 sed -i 's/CONFIG_PACKAGE_luci-i18n-hd-idle-zh-cn=y/CONFIG_PACKAGE_luci-i18n-hd-idle-zh-cn=n/' .config
-
 
 #移除samba4
 sed -i 's/CONFIG_PACKAGE_luci-i18n-samba4-zh-cn=y/CONFIG_PACKAGE_luci-i18n-samba4-zh-cn=n/' .config
