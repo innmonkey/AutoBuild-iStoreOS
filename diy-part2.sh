@@ -152,3 +152,6 @@ sed -i 's/services/nas/g' feeds/luci/applications/luci-app-transmission/root/usr
 #sed -i 's/services/nas/g' package/luci-app-xunlei/luasrc/controller/*.lua
 #sed -i 's/services/nas/g' package/luci-app-xunlei/luasrc/model/cbi/v2ray_server/*.lua
 #sed -i 's/services/nas/g' package/luci-app-xunlei/luasrc/view/v2ray_server/*.htm
+
+# 更改 Argon 主题背景
+cp -f $GITHUB_WORKSPACE/bg1.jpg feeds/third/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
