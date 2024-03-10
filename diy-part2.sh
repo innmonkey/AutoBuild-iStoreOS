@@ -78,10 +78,6 @@ CONFIG_PACKAGE_luci-app-qbittorrent=y
 CONFIG_PACKAGE_luci-app-transmission=y
 " >> .config
 
-# 移除S.M.A.R.T.
-sed -i 's/CONFIG_PACKAGE_smartd=y/CONFIG_PACKAGE_smartd=n/' .config
-sed -i 's/CONFIG_PACKAGE_smartmontools=y/CONFIG_PACKAGE_smartmontools=n/' .config
-
 # 移除应用过滤
 sed -i 's/CONFIG_PACKAGE_appfilter=y/CONFIG_PACKAGE_appfilter=n/' .config
 
@@ -93,7 +89,6 @@ sed -i 's/CONFIG_PACKAGE_luci-i18n-wol-zh-cn=y/CONFIG_PACKAGE_luci-i18n-wol-zh-c
 sed -i 's/CONFIG_PACKAGE_luci-app-hd-idle=y/CONFIG_PACKAGE_luci-app-hd-idle=n/' .config
 sed -i 's/CONFIG_PACKAGE_hd-idle=y/CONFIG_PACKAGE_hd-idle=n/' .config
 sed -i 's/CONFIG_PACKAGE_luci-i18n-hd-idle-zh-cn=y/CONFIG_PACKAGE_luci-i18n-hd-idle-zh-cn=n/' .config
-
 
 #移除samba4
 sed -i 's/CONFIG_PACKAGE_luci-i18n-samba4-zh-cn=y/CONFIG_PACKAGE_luci-i18n-samba4-zh-cn=n/' .config
@@ -131,16 +126,20 @@ sed -i 's/CONFIG_PACKAGE_luci-i18n-cifs-mount-zh-cn=y/CONFIG_PACKAGE_luci-i18n-c
 sed -i 's/CONFIG_PACKAGE_cifsmount=y/CONFIG_PACKAGE_cifsmount=n/' .config
 sed -i 's/CONFIG_PACKAGE_kmod-fs-cifs=y/CONFIG_PACKAGE_kmod-fs-cifs=n/' .config
 
-#移除磁盘阵列
-sed -i 's/CONFIG_PACKAGE_kmod-dm-raid=y/CONFIG_PACKAGE_kmod-dm-raid=n/' .config
-sed -i 's/CONFIG_PACKAGE_kmod-lib-raid6=y/CONFIG_PACKAGE_kmod-lib-raid6=n/' .config
-sed -i 's/CONFIG_PACKAGE_kmod-md-raid0=y/CONFIG_PACKAGE_kmod-md-raid0=n/' .config
-sed -i 's/CONFIG_PACKAGE_kmod-md-raid1=y/CONFIG_PACKAGE_kmod-md-raid1=n/' .config
-sed -i 's/CONFIG_PACKAGE_kmod-md-raid10=y/CONFIG_PACKAGE_kmod-md-raid10=n/' .config
-sed -i 's/CONFIG_PACKAGE_kmod-md-raid456=y/CONFIG_PACKAGE_kmod-md-raid456=n/' .config
-sed -i 's/CONFIG_PACKAGE_kmod-scsi-raid=y/CONFIG_PACKAGE_kmod-scsi-raid=n/' .config
-sed -i 's/CONFIG_PACKAGE_kmod-md-mod=y/CONFIG_PACKAGE_kmod-md-mod=n/' .config
-sed -i 's/CONFIG_PACKAGE_kmod-md-linear=y/CONFIG_PACKAGE_kmod-md-linear=n/' .config
+#移除磁盘阵列 不管用！！！
+#sed -i 's/CONFIG_PACKAGE_kmod-dm-raid=y/CONFIG_PACKAGE_kmod-dm-raid=n/' .config
+#sed -i 's/CONFIG_PACKAGE_kmod-lib-raid6=y/CONFIG_PACKAGE_kmod-lib-raid6=n/' .config
+#sed -i 's/CONFIG_PACKAGE_kmod-md-raid0=y/CONFIG_PACKAGE_kmod-md-raid0=n/' .config
+#sed -i 's/CONFIG_PACKAGE_kmod-md-raid1=y/CONFIG_PACKAGE_kmod-md-raid1=n/' .config
+#sed -i 's/CONFIG_PACKAGE_kmod-md-raid10=y/CONFIG_PACKAGE_kmod-md-raid10=n/' .config
+#sed -i 's/CONFIG_PACKAGE_kmod-md-raid456=y/CONFIG_PACKAGE_kmod-md-raid456=n/' .config
+#sed -i 's/CONFIG_PACKAGE_kmod-scsi-raid=y/CONFIG_PACKAGE_kmod-scsi-raid=n/' .config
+#sed -i 's/CONFIG_PACKAGE_kmod-md-mod=y/CONFIG_PACKAGE_kmod-md-mod=n/' .config
+#sed -i 's/CONFIG_PACKAGE_kmod-md-linear=y/CONFIG_PACKAGE_kmod-md-linear=n/' .config
+
+# 移除S.M.A.R.T. 不管用！！！
+#sed -i 's/CONFIG_PACKAGE_smartd=y/CONFIG_PACKAGE_smartd=n/' .config
+#sed -i 's/CONFIG_PACKAGE_smartmontools=y/CONFIG_PACKAGE_smartmontools=n/' .config
 
 # 移除 bootstrap 主题
 sed -i 's/CONFIG_PACKAGE_luci-theme-bootstrap=y/CONFIG_PACKAGE_luci-theme-bootstrap=n/' .config
@@ -157,6 +156,11 @@ sed -i 's/services/nas/g' feeds/luci/applications/luci-app-transmission/root/usr
 #sed -i 's/services/nas/g' package/luci-app-xunlei/luasrc/controller/*.lua
 #sed -i 's/services/nas/g' package/luci-app-xunlei/luasrc/model/cbi/v2ray_server/*.lua
 #sed -i 's/services/nas/g' package/luci-app-xunlei/luasrc/view/v2ray_server/*.htm
+
+# 调整 linkease 到 nas 菜单
+#sed -i 's/services/nas/g' feeds/linkease_nas_luci/luci/luci-app-linkease/luasrc/controller/*.lua
+#sed -i 's/services/nas/g' feeds/linkease_nas_luci/luci/luci-app-linkease/luasrc/model/cbi/v2ray_server/*.lua
+#sed -i 's/services/nas/g' feeds/linkease_nas_luci/luci/luci-app-linkease/luasrc/view/v2ray_server/*.htm
 
 # 更改 Argon 主题背景
 cp -f $GITHUB_WORKSPACE/bg1.jpg feeds/third/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
