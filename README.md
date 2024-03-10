@@ -4,20 +4,28 @@
 
 ## 功能特性
 
+### 添加新支持
 - x86 支持 VMDK
+
+### 移除无用功能
 - 移除 samba4
 - 移除 统一文件共享
 - 移除 NFS挂载
 - 移除 挂载网络共享
-- 移除 磁盘阵列
+- 移除 硬盘休眠
+- 移除 网络唤醒
 - 移除 bootstrap 主题
-- 添加 关机
+- 移除 应用过滤
+  
+### 添加新功能
 - 添加 OpenClash
 - 添加 ADGuardHome
 - 添加 Mosdns
 - 添加 Pushbot
 - 添加 qbittorrent
 - 添加 transmission
+- 添加 Jellyfin
+- 添加 迅雷下载
 
 
 ## 默认配置
