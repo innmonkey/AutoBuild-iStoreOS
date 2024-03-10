@@ -51,7 +51,6 @@ jobs:
       uses: actions/setup-go@main
       with:
         go-version: 'stable'
-        cache: false
 
     - name: 初始化编译环境
       env:
