@@ -10,7 +10,7 @@
 # Description: OpenWrt DIY script part 1 (Before Update feeds)
 #
 #指定行添加删除注释
-#sed -i 's/^.*OpenAppFilter.*/#&/' feeds.conf.default
+sed -i 's/^.*OpenAppFilter.*/#&/' feeds.conf.default
 #sed -i 's/^.*istore-packages.*/#&/' feeds.conf.default
 
 # Uncomment a feed source
