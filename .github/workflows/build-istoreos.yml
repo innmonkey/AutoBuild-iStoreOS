@@ -48,7 +48,7 @@ jobs:
         df -Th
 
     - name: 安装 Go 1.21.1
-      uses: actions/setup-go@main
+      uses: actions/setup-go@v3
       with:
         go-version: 'stable'
 
