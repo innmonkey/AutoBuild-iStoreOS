@@ -79,18 +79,18 @@ CONFIG_PACKAGE_luci-app-transmission=y
 " >> .config
 
 # 调整 transmission 到 nas 菜单
-sed -i 's/services/nas/g' feeds/luci/applications/luci-app-transmission/root/usr/share/luci/menu.d/luci-app-transmission.json
+#sed -i 's/services/nas/g' feeds/luci/applications/luci-app-transmission/root/usr/share/luci/menu.d/luci-app-transmission.json
 
 # 调整 jellyfin 到 nas 菜单
-sed -i 's/services/nas/g' package/luci-app-jellyfin/luasrc/controller/*.lua
-sed -i 's/services/nas/g' package/luci-app-jellyfin/luasrc/model/cbi/*.lua
+#sed -i 's/services/nas/g' package/luci-app-jellyfin/luasrc/controller/*.lua
+#sed -i 's/services/nas/g' package/luci-app-jellyfin/luasrc/model/cbi/*.lua
 
 # 调整 迅雷 到 nas 菜单
-sed -i 's/services/nas/g' package/luci-app-xunlei/luasrc/controller/*.lua
+#sed -i 's/services/nas/g' package/luci-app-xunlei/luasrc/controller/*.lua
 
 # 调整 linkease 到 nas 菜单
-sed -i 's/services/nas/g' feeds/linkease_nas_luci/luci/luci-app-linkease/luasrc/controller/*.lua
-sed -i 's/services/nas/g' feeds/linkease_nas_luci/luci/luci-app-linkease/luasrc/view/*.htm
+#sed -i 's/services/nas/g' feeds/linkease_nas_luci/luci/luci-app-linkease/luasrc/controller/*.lua
+#sed -i 's/services/nas/g' feeds/linkease_nas_luci/luci/luci-app-linkease/luasrc/view/*.htm
 
 # 更改 Argon 主题背景
 cp -f $GITHUB_WORKSPACE/bg1.jpg feeds/third/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
