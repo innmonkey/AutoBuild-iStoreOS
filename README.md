@@ -1,10 +1,7 @@
 # iStoreOS 固件 | 定制的麻烦自行 fork 修改
 
-[![iStore使用文档](https://img.shields.io/badge/使用文档-iStore%20OS-brightgreen?style=flat-square)](https://doc.linkease.com/zh/guide/istoreos)  ![支持设备](https://img.shields.io/badge/支持设备-x86/64-blue.svg?style=flat-square)  [![最新固件下载](https://img.shields.io/github/v/release/innmonkey/Build-iStoreOS?style=flat-square&label=最新固件下载)](../../releases/latest)
+[![iStore使用文档](https://img.shields.io/badge/使用文档-iStore%20OS-brightgreen?style=flat-square)](https://doc.linkease.com/zh/guide/istoreos)  [![iStore源码](https://img.shields.io/badge/源码-iStoreOS-23.05%20OS-brightgreen?style=flat-square)](https://github.com/istoreos/istoreos)  ![支持设备](https://img.shields.io/badge/支持设备-x86/64-blue.svg?style=flat-square)  [![最新固件下载](https://img.shields.io/github/v/release/innmonkey/Build-iStoreOS?style=flat-square&label=最新固件下载)](../../releases/latest)
 
-## 源码
-
-- 基于iStoreOS-23.05源码，适用于x86/64设备。
 
 ## 功能特性
 
