@@ -18,6 +18,10 @@ jobs:
         wget -O ./feeds.conf https://fw0.koolcenter.com/iStoreOS/alpha/x86_64_efi/feeds.conf
         wget -O ./.config https://fw0.koolcenter.com/iStoreOS/alpha/x86_64_efi/config.buildinfo
 
+    - name: 注释软件源
+      run: |
+        sed -i 's/^.*OpenAppFilter.*/#&/' feeds.conf
+
     - name: 同步配置
       uses: peaceiris/actions-gh-pages@v3
       with:
