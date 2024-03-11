@@ -80,6 +80,10 @@ CONFIG_PACKAGE_luci-app-transmission=y
 
 # 移除应用过滤
 sed -i 's/CONFIG_PACKAGE_appfilter=y/CONFIG_PACKAGE_appfilter=n/' .config
+sed -i 's/CONFIG_PACKAGE_kmod-oaf=y/CONFIG_PACKAGE_kmod-oaf=n/' .config
+sed -i 's/CONFIG_PACKAGE_luci-app-oaf=y/CONFIG_PACKAGE_luci-app-oaf=n/' .config
+sed -i 's/CONFIG_PACKAGE_luci-i18n-oaf-zh-cn=y/CONFIG_PACKAGE_luci-i18n-oaf-zh-cn=n/' .config
+sed -i 's/CONFIG_PACKAGE_kmod-oaf=y/CONFIG_PACKAGE_kmod-oaf=n/' .config
 
 #移除网络唤醒
 sed -i 's/CONFIG_PACKAGE_luci-app-wol=y/CONFIG_PACKAGE_luci-app-wol=n/' .config
