@@ -149,18 +149,14 @@ sed -i 's/services/nas/g' feeds/luci/applications/luci-app-transmission/root/usr
 
 # 调整 jellyfin 到 nas 菜单
 sed -i 's/services/nas/g' package/luci-app-jellyfin/luasrc/controller/*.lua
-sed -i 's/services/nas/g' package/luci-app-jellyfin/luasrc/model/cbi/v2ray_server/*.lua
-sed -i 's/services/nas/g' package/luci-app-jellyfin/luasrc/view/v2ray_server/*.htm
+sed -i 's/services/nas/g' package/luci-app-jellyfin/luasrc/model/cbi/*.lua
 
 # 调整 迅雷 到 nas 菜单
 sed -i 's/services/nas/g' package/luci-app-xunlei/luasrc/controller/*.lua
-sed -i 's/services/nas/g' package/luci-app-xunlei/luasrc/model/cbi/v2ray_server/*.lua
-sed -i 's/services/nas/g' package/luci-app-xunlei/luasrc/view/v2ray_server/*.htm
 
 # 调整 linkease 到 nas 菜单
 sed -i 's/services/nas/g' feeds/linkease_nas_luci/luci/luci-app-linkease/luasrc/controller/*.lua
-sed -i 's/services/nas/g' feeds/linkease_nas_luci/luci/luci-app-linkease/luasrc/model/cbi/v2ray_server/*.lua
-sed -i 's/services/nas/g' feeds/linkease_nas_luci/luci/luci-app-linkease/luasrc/view/v2ray_server/*.htm
+sed -i 's/services/nas/g' feeds/linkease_nas_luci/luci/luci-app-linkease/luasrc/view/*.htm
 
 # 更改 Argon 主题背景
 cp -f $GITHUB_WORKSPACE/bg1.jpg feeds/third/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
