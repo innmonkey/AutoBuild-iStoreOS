@@ -35,7 +35,7 @@ function git_sparse_clone() {
 
 # 添加额外插件
 #git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
-git clone --depth=1 https://github.com/sbwml/luci-app-mosdns package/mosdns
+#git clone --depth=1 https://github.com/sbwml/luci-app-mosdns package/mosdns
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 
