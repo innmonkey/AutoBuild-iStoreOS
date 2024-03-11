@@ -67,3 +67,7 @@ sed -i 's/CONFIG_PACKAGE_smartmontools=y/CONFIG_PACKAGE_smartmontools=n/' .confi
 
 # 移除 bootstrap 主题
 sed -i 's/CONFIG_PACKAGE_luci-theme-bootstrap=y/CONFIG_PACKAGE_luci-theme-bootstrap=n/' .config
+
+# 移除 OTA升级
+sed -i 's/CONFIG_PACKAGE_luci-app-ota=y/CONFIG_PACKAGE_luci-app-ota=n/' .config
+sed -i 's/CONFIG_PACKAGE_luci-i18n-ota-zh-cn=y/CONFIG_PACKAGE_luci-i18n-ota-zh-cn=n/' .config
