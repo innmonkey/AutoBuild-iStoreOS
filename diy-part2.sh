@@ -16,6 +16,9 @@ sed -i 's/192.168.1.1/192.168.0.2/g' package/base-files/files/bin/config_generat
 # 修改主机名字，把 iStore OS 修改你喜欢的就行（不能纯数字或者使用中文）
 sed -i 's/OpenWrt/iStoreOS/g' package/base-files/files/bin/config_generate
 
+# 更改 Argon 主题背景
+cp -f $GITHUB_WORKSPACE/bg1.jpg feeds/third/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
+
 # 移除要替换的包
 #rm -rf feeds/packages/net/mosdns
 rm -rf feeds/packages/net/v2ray-geodata
@@ -38,8 +41,6 @@ git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-adguardhome
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-openclash
-git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-xunlei
-
 
 echo "
 # 额外组件
@@ -74,19 +75,3 @@ CONFIG_PACKAGE_luci-app-transmission=y
 CONFIG_PACKAGE_luci-app-uhttpd=y
 " >> .config
 
-# 调整 transmission 到 nas 菜单
-#sed -i 's/services/nas/g' feeds/luci/applications/luci-app-transmission/root/usr/share/luci/menu.d/luci-app-transmission.json
-
-# 调整 jellyfin 到 nas 菜单
-#sed -i 's/services/nas/g' package/luci-app-jellyfin/luasrc/controller/*.lua
-#sed -i 's/services/nas/g' package/luci-app-jellyfin/luasrc/model/cbi/*.lua
-
-# 调整 迅雷 到 nas 菜单
-#sed -i 's/services/nas/g' package/luci-app-xunlei/luasrc/controller/*.lua
-
-# 调整 linkease 到 nas 菜单
-#sed -i 's/services/nas/g' feeds/linkease_nas_luci/luci/luci-app-linkease/luasrc/controller/*.lua
-#sed -i 's/services/nas/g' feeds/linkease_nas_luci/luci/luci-app-linkease/luasrc/view/*.htm
-
-# 更改 Argon 主题背景
-cp -f $GITHUB_WORKSPACE/bg1.jpg feeds/third/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
