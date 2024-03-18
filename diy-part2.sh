@@ -34,19 +34,12 @@ function git_sparse_clone() {
 }
 
 # 添加额外插件
-#git clone --depth=1 https://github.com/kongfl888/luci-app-adguardhome package/luci-app-adguardhome
-#git clone --depth=1 https://github.com/sbwml/luci-app-mosdns package/mosdns
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
-
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-adguardhome
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-openclash
-git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-jellyfin
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-xunlei
-#git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-mosdns
-#git clone https://github.com/zzsj0928/luci-app-pushbot package/luci-app-pushbot
-#git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-qbittorrent
-#git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-transmission
+
 
 echo "
 # 额外组件
