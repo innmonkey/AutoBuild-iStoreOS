@@ -76,6 +76,9 @@ CONFIG_PACKAGE_luci-app-qbittorrent=y
 
 # transmission
 CONFIG_PACKAGE_luci-app-transmission=y
+
+# uhttpd
+CONFIG_PACKAGE_luci-app-uhttpd=y
 " >> .config
 
 # 调整 transmission 到 nas 菜单
