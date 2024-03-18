@@ -74,21 +74,10 @@ jobs:
         sed -i 's/CONFIG_PACKAGE_luci-i18n-cifs-mount-zh-cn=y/CONFIG_PACKAGE_luci-i18n-cifs-mount-zh-cn=n/' .config
         sed -i 's/CONFIG_PACKAGE_cifsmount=y/CONFIG_PACKAGE_cifsmount=n/' .config
         sed -i 's/CONFIG_PACKAGE_kmod-fs-cifs=y/CONFIG_PACKAGE_kmod-fs-cifs=n/' .config
-        
-        #移除磁盘阵列 不管用！！！
-        sed -i 's/CONFIG_PACKAGE_kmod-dm-raid=y/CONFIG_PACKAGE_kmod-dm-raid=n/' .config
-        sed -i 's/CONFIG_PACKAGE_kmod-lib-raid6=y/CONFIG_PACKAGE_kmod-lib-raid6=n/' .config
-        sed -i 's/CONFIG_PACKAGE_kmod-md-raid0=y/CONFIG_PACKAGE_kmod-md-raid0=n/' .config
-        sed -i 's/CONFIG_PACKAGE_kmod-md-raid1=y/CONFIG_PACKAGE_kmod-md-raid1=n/' .config
-        sed -i 's/CONFIG_PACKAGE_kmod-md-raid10=y/CONFIG_PACKAGE_kmod-md-raid10=n/' .config
-        sed -i 's/CONFIG_PACKAGE_kmod-md-raid456=y/CONFIG_PACKAGE_kmod-md-raid456=n/' .config
-        sed -i 's/CONFIG_PACKAGE_kmod-scsi-raid=y/CONFIG_PACKAGE_kmod-scsi-raid=n/' .config
-        sed -i 's/CONFIG_PACKAGE_kmod-md-mod=y/CONFIG_PACKAGE_kmod-md-mod=n/' .config
-        sed -i 's/CONFIG_PACKAGE_kmod-md-linear=y/CONFIG_PACKAGE_kmod-md-linear=n/' .config
-        
-        # 移除S.M.A.R.T. 不管用！！！
-        sed -i 's/CONFIG_PACKAGE_smartd=y/CONFIG_PACKAGE_smartd=n/' .config
-        sed -i 's/CONFIG_PACKAGE_smartmontools=y/CONFIG_PACKAGE_smartmontools=n/' .config
+
+        #移除挂载网络共享
+        sed -i 's/CONFIG_PACKAGE_luci-app-ota=y/CONFIG_PACKAGE_luci-app-ota=n/' .config
+        sed -i 's/CONFIG_PACKAGE_luci-i18n-ota-zh-cn=y/CONFIG_PACKAGE_luci-i18n-ota-zh-cn=n/' .config
         
         # 移除 bootstrap 主题
         sed -i 's/CONFIG_PACKAGE_luci-theme-bootstrap=y/CONFIG_PACKAGE_luci-theme-bootstrap=n/' .config
