@@ -42,7 +42,7 @@ git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
 git clone https://github.com/zzsj0928/luci-app-pushbot package/luci-app-pushbot
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-adguardhome
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-openclash
-
+git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-aliddns
 
 echo "
 # 额外组件
@@ -75,5 +75,9 @@ CONFIG_PACKAGE_luci-app-transmission=y
 
 # uhttpd
 CONFIG_PACKAGE_luci-app-uhttpd=y
+
+# 阿里DDNS
+CONFIG_PACKAGE_luci-app-aliddns=y
+
 " >> .config
 
