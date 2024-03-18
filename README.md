@@ -26,13 +26,6 @@
 - 添加 qbittorrent
 - 添加 transmission
 - 添加 Jellyfin
-- 添加 迅雷下载
-
-### 菜单栏调整
-- 将 qbittorrent  调整至 网络存储 
-- 将 transmission  调整至 网络存储 
-- 将 Jellyfin  调整至 网络存储 
-- 将 迅雷下载  调整至 网络存储 
 
 ## 默认配置
 
