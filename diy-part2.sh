@@ -24,7 +24,7 @@ cp -f $GITHUB_WORKSPACE/bg1.jpg feeds/third/luci-theme-argon/htdocs/luci-static/
 rm -rf feeds/packages/net/v2ray-geodata
 #cp -r -f ./feeds/第三方源的文件 ./feeds/packages/net/mosdns
 rm -rf feeds/third_party/luci-app-LingTiGameAcc
-
+rm -rf feeds/third_party/luci-app-pushbot
 
 # Git稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
@@ -39,8 +39,10 @@ function git_sparse_clone() {
 # 添加额外插件
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
+git clone https://github.com/zzsj0928/luci-app-pushbot package/luci-app-pushbot
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-adguardhome
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-openclash
+
 
 echo "
 # 额外组件
