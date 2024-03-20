@@ -44,6 +44,17 @@ git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-adg
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-openclash
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-aliddns
 
+# 加入OpenClash核心
+chmod -R a+x $GITHUB_WORKSPACE/preset-clash-core.sh
+if [ "$1" = "rk33xx" ]; then
+    $GITHUB_WORKSPACE/preset-clash-core.sh arm64
+elif [ "$1" = "rk35xx" ]; then
+    $GITHUB_WORKSPACE/preset-clash-core.sh arm64
+elif [ "$1" = "x86" ]; then
+    $GITHUB_WORKSPACE/preset-clash-core.sh amd64
+fi
+
+
 echo "
 # 额外组件
 CONFIG_GRUB_IMAGES=y
@@ -63,9 +74,6 @@ CONFIG_PACKAGE_luci-app-pushbot=y
 
 # Jellyfin
 CONFIG_PACKAGE_luci-app-jellyfin=y
-
-# xunlei
-CONFIG_PACKAGE_luci-app-xunlei=y
 
 # qbittorrent
 CONFIG_PACKAGE_luci-app-qbittorrent=y
