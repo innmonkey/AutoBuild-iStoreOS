@@ -25,7 +25,7 @@ rm -rf feeds/packages/net/v2ray-geodata
 #cp -r -f ./feeds/第三方源的文件 ./feeds/packages/net/mosdns
 rm -rf feeds/third_party/luci-app-LingTiGameAcc
 rm -rf feeds/third_party/luci-app-pushbot
-rm -rf feeds/third_party/luci-theme-argon
+rm -rf feeds/third/luci-theme-argon
 
 # Git稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
