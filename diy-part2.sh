@@ -17,7 +17,7 @@ sed -i 's/192.168.1.1/192.168.0.2/g' package/base-files/files/bin/config_generat
 sed -i 's/OpenWrt/iStoreOS/g' package/base-files/files/bin/config_generate
 
 # 更改 Argon 主题背景
-#cp -f $GITHUB_WORKSPACE/bg1.jpg feeds/third/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
+cp -f $GITHUB_WORKSPACE/bg1.jpg feeds/third/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 
 # 移除要替换的包
 #rm -rf feeds/packages/net/mosdns
@@ -48,13 +48,7 @@ git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-ali
 
 # 加入OpenClash核心
 chmod -R a+x $GITHUB_WORKSPACE/preset-clash-core.sh
-if [ "$1" = "rk33xx" ]; then
-    $GITHUB_WORKSPACE/preset-clash-core.sh arm64
-elif [ "$1" = "rk35xx" ]; then
-    $GITHUB_WORKSPACE/preset-clash-core.sh arm64
-elif [ "$1" = "x86" ]; then
-    $GITHUB_WORKSPACE/preset-clash-core.sh amd64
-fi
+$GITHUB_WORKSPACE/preset-clash-core.sh arm64
 
 
 echo "
