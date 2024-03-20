@@ -48,7 +48,7 @@ git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-ali
 
 # 加入OpenClash核心
 chmod -R a+x $GITHUB_WORKSPACE/preset-clash-core.sh
-$GITHUB_WORKSPACE/preset-clash-core.sh arm64
+$GITHUB_WORKSPACE/preset-clash-core.sh amd64
 
 
 echo "
