@@ -87,5 +87,9 @@ CONFIG_PACKAGE_luci-app-uhttpd=y
 # 阿里DDNS
 CONFIG_PACKAGE_luci-app-aliddns=y
 
+# rclone
+CONFIG_PACKAGE_rclone=y
+CONFIG_PACKAGE_fuse3-utils=y
+
 " >> .config
 
