@@ -17,7 +17,7 @@ sed -i 's/192.168.1.1/192.168.0.2/g' package/base-files/files/bin/config_generat
 sed -i 's/OpenWrt/iStoreOS/g' package/base-files/files/bin/config_generate
 
 # 更改 Argon 主题背景
-cp -f $GITHUB_WORKSPACE/bg1.jpg feeds/third/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
+cp -f $GITHUB_WORKSPACE/bg1.jpg package/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
 
 # 移除要替换的包
 #rm -rf feeds/packages/net/mosdns
