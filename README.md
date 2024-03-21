@@ -5,6 +5,9 @@
 
 ## 功能特性
 
+### 背景自定义
+- 自定义背景和网页图标
+
 ### 添加新支持
 - x86 支持 VMDK
 
@@ -15,7 +18,7 @@
 - 移除 挂载网络共享
 - 移除 硬盘休眠
 - 移除 网络唤醒
-- 移除 bootstrap 主题
+- 移除 bootstrap主题
 - 移除 应用过滤
   
 ### 添加新功能
@@ -28,18 +31,15 @@
 - 添加 Jellyfin
 
 ## 默认配置
-
 - IP: `http://192.168.0.2` or `http://iStoreOS.lan/`
 - 用户名: `root`
 - 密码: `password`
 - 如果设备只有一个网口，则此网口就是 `LAN` , 如果大于一个网口, 默认第一个网口是 `WAN` 口, 其它都是 `LAN`
 - 如果要修改 `LAN` 口 `IP` , 首页有个内网设置，或者用命令 `quickstart` 修改
-- 北京时间每天 `0:00` 定时编译, `Release` 中只保留最新版本
-- 历史版本在 `Actions` 中选择一个已经运行完成且成功的 `workflow` 在页面底部可以看到 `Artifacts`, `Artifacts` 需要登录 Github 才能下载
+- 编译时间不定, 每月3-4次，`Release` 中只保留最近3个版本
 
 
 ## 鸣谢
-
 - [dracon-china/customize-istoreos-actions](https://github.com/dracon-china/customize-istoreos-actions)
 - [P3TERX/Actions-OpenWrt](https://github.com/P3TERX/Actions-OpenWrt)
 - [OpenWrt](https://github.com/openwrt/openwrt)
