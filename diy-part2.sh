@@ -48,7 +48,7 @@ git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-ali
 
 # 加入OpenClash核心
 chmod -R a+x $GITHUB_WORKSPACE/preset-clash-core.sh
-$GITHUB_WORKSPACE/preset-clash-core.sh amd64
+$GITHUB_WORKSPACE/preset-clash-core.sh
 
 
 echo "
@@ -84,8 +84,8 @@ CONFIG_PACKAGE_luci-app-uhttpd=y
 CONFIG_PACKAGE_luci-app-aliddns=y
 
 # rclone
-CONFIG_PACKAGE_rclone=y
-CONFIG_PACKAGE_fuse3-utils=y
+#CONFIG_PACKAGE_rclone=y
+#CONFIG_PACKAGE_fuse3-utils=y
 
 " >> .config
 
