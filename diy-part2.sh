@@ -76,6 +76,11 @@ CONFIG_PACKAGE_luci-app-qbittorrent=y
 
 # transmission
 CONFIG_PACKAGE_luci-app-transmission=y
+CONFIG_PACKAGE_transmission-daemon=y
+CONFIG_PACKAGE_luci-i18n-transmission-zh-cn=y
+CONFIG_PACKAGE_app-meta-transmission=y
+CONFIG_PACKAGE_transmission-web-control=y
+CONFIG_PACKAGE_transmission-daemon-openssl=y
 
 # uhttpd
 CONFIG_PACKAGE_luci-app-uhttpd=y
