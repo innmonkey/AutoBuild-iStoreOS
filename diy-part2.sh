@@ -70,6 +70,8 @@ CONFIG_PACKAGE_luci-app-pushbot=y
 
 # Jellyfin
 CONFIG_PACKAGE_luci-app-jellyfin=y
+CONFIG_PACKAGE_app-meta-jellyfin=y
+CONFIG_PACKAGE_luci-i18n-jellyfin-zh-cn=y
 
 # qbittorrent
 CONFIG_PACKAGE_luci-app-qbittorrent=y
