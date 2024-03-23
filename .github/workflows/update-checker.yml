@@ -14,7 +14,7 @@ name: 源码检查更新
 
 env:
   REPO_URL: https://github.com/istoreos/istoreos
-  REPO_BRANCH: istoreos-23.05
+  REPO_BRANCH: istoreos-22.03
 
 on:
   workflow_dispatch:
