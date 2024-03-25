@@ -19,7 +19,6 @@ sed -i 's/OpenWrt/iStoreOS/g' package/base-files/files/bin/config_generate
 # 移除要替换的包
 rm -rf feeds/packages/net/v2ray-geodata
 rm -rf feeds/third_party/luci-app-LingTiGameAcc
-rm -rf feeds/third/luci-theme-argon
 
 # Git稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
@@ -34,7 +33,6 @@ function git_sparse_clone() {
 # 添加额外插件
 git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
 git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
-git clone https://github.com/innmonkey/luci-theme-argon package/luci-theme-argon
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-adguardhome
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-openclash
 git_sparse_clone master https://github.com/kiddin9/openwrt-packages luci-app-aliddns
@@ -45,7 +43,18 @@ chmod -R a+x $GITHUB_WORKSPACE/preset-clash-core.sh
 $GITHUB_WORKSPACE/preset-clash-core.sh
 
 # 更改 Argon 主题背景
-cp -f $GITHUB_WORKSPACE/bg1.jpg package/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
+cp -f $GITHUB_WORKSPACE/argon/img/bg1.jpg feeds/third/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
+cp -f $GITHUB_WORKSPACE/argon/img/argon.svg feeds/third/luci-theme-argon/htdocs/luci-static/argon/img/argon.svg
+cp -f $GITHUB_WORKSPACE/argon/background/background.jpg feeds/third/luci-theme-argon/htdocs/luci-static/argon/background/background.jpg
+cp -f $GITHUB_WORKSPACE/argon/favicon.ico feeds/third/luci-theme-argon/htdocs/luci-static/argon/favicon.ico
+cp -f $GITHUB_WORKSPACE/argon/icon/android-icon-192x192.png feeds/third/luci-theme-argon/htdocs/luci-static/argon/icon/android-icon-192x192.png
+cp -f $GITHUB_WORKSPACE/argon/icon/apple-icon-144x144.png feeds/third/luci-theme-argon/htdocs/luci-static/argon/icon/apple-icon-144x144.png
+cp -f $GITHUB_WORKSPACE/argon/icon/apple-icon-60x60.png feeds/third/luci-theme-argon/htdocs/luci-static/argon/icon/apple-icon-60x60.png
+cp -f $GITHUB_WORKSPACE/argon/icon/apple-icon-72x72.png feeds/third/luci-theme-argon/htdocs/luci-static/argon/icon/apple-icon-72x72.png
+cp -f $GITHUB_WORKSPACE/argon/icon/favicon-16x16.png feeds/third/luci-theme-argon/htdocs/luci-static/argon/icon/favicon-16x16.png
+cp -f $GITHUB_WORKSPACE/argon/icon/favicon-32x32.png feeds/third/luci-theme-argon/htdocs/luci-static/argon/icon/favicon-32x32.png
+cp -f $GITHUB_WORKSPACE/argon/icon/favicon-96x96.png feeds/third/luci-theme-argon/htdocs/luci-static/argon/icon/favicon-96x96.png
+cp -f $GITHUB_WORKSPACE/argon/icon/ms-icon-144x144.png feeds/third/luci-theme-argon/htdocs/luci-static/argon/icon/ms-icon-144x144.png
 
 echo "
 # 额外组件
