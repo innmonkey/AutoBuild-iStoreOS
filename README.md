@@ -34,7 +34,7 @@
 - 添加 qbittorrent
 - 添加 transmission
 - 添加 Jellyfin
-- 添加 阿里DNS
+- 添加 阿里DDNS
 
 ## 默认配置
 - IP: `http://192.168.0.2` or `http://iStoreOS.lan/`
