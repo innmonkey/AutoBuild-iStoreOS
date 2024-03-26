@@ -23,7 +23,7 @@
 - 移除 挂载网络共享
 - 移除 硬盘休眠
 - 移除 网络唤醒
-- 移除 bootstrap主题
+- 移除 DDNS
 - 移除 应用过滤
   
 ### 添加新功能
@@ -34,6 +34,7 @@
 - 添加 qbittorrent
 - 添加 transmission
 - 添加 Jellyfin
+- 添加 阿里DNS
 
 ## 默认配置
 - IP: `http://192.168.0.2` or `http://iStoreOS.lan/`
