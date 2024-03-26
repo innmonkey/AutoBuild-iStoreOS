@@ -84,7 +84,7 @@ CONFIG_PACKAGE_luci-app-qbittorrent=y
 CONFIG_PACKAGE_luci-app-transmission=y
 
 # uhttpd
-CONFIG_PACKAGE_luci-app-uhttpd=y
+#CONFIG_PACKAGE_luci-app-uhttpd=y
 
 # 阿里DDNS
 CONFIG_PACKAGE_luci-app-aliddns=y
