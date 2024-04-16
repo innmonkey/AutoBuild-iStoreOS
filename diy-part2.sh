@@ -18,6 +18,8 @@ sed -i 's/OpenWrt/iStoreOS/g' package/base-files/files/bin/config_generate
 
 # 移除要替换的包
 rm -rf feeds/third_party/luci-app-LingTiGameAcc
+rm -rf feeds/packages/net/mosdns
+#rm -rf feeds/packages/net/v2ray-geodata
 
 # Git稀疏克隆，只克隆指定目录到本地
 function git_sparse_clone() {
