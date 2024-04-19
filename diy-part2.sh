@@ -18,8 +18,6 @@ sed -i 's/OpenWrt/iStoreOS/g' package/base-files/files/bin/config_generate
 
 # 移除要替换的包
 rm -rf feeds/third_party/luci-app-LingTiGameAcc
-rm -rf feeds/packages/net/mosdns
-rm -rf feeds/packages/net/v2ray-geodata
 find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
 find ./ | grep Makefile | grep mosdns | xargs rm -f
 
